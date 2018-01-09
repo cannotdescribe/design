@@ -7,9 +7,10 @@ public class HttpMain {
         filterChain.addFilter(new NmbHtmlFilter());
         filterChain.addFilter(new MmpHtmlFilter());
         Request request = new MyHttpRequest();
-        request.setAttribute("text", "我说了： nmb , 你真是个天才 mmp, cnm");
+        request.setAttribute("text", "我说了： cnm ,nmb, mmp");
         Response response= new MyHttpResponse();
-        filterChain.doFilter(request, response);
+        filterChain.doFilter(request, response, filterChain);
         System.out.println(request.getAttribute("text"));
+        System.out.println(response.getAttribute("text"));
     }
 }

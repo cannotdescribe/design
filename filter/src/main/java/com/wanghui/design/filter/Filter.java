@@ -1,5 +1,5 @@
 package com.wanghui.design.filter;
 
 public interface Filter {
-    void doFilter(Request request, Response response);
+    void doFilter(Request request, Response response, FilterChain fc);
 }
